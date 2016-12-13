@@ -1,6 +1,6 @@
 {
   "name": "inject-style-tag",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Injects <style> tags in <head>, avoiding duplicates.",
   "author": "Andreas Bielk <andreas.bielk@six-group.se> (http://www.six.se)",
   "license": "MIT",
