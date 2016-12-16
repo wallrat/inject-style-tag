@@ -3,7 +3,7 @@ let lastIdInserted = null
 
 // Force single-tag solution on IE6-9, which has a hard limit
 // on the # of <style> tags it will allow on a page
-const createSingleTag = /msie [6-9]\b/.test(self.navigator.userAgent.toLowerCase())
+const createSingleTag = self && /msie [6-9]\b/.test(self.navigator.userAgent.toLowerCase())
 
 module.exports = {
   inject(css,id) {
