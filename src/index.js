@@ -1,12 +1,17 @@
 // state
 let lastIdInserted = null
 
+// check if we are in a browser env
+const isBrowser = (typeof window !== 'undefined')
+
 // Force single-tag solution on IE6-9, which has a hard limit
 // on the # of <style> tags it will allow on a page
-const createSingleTag = self && /msie [6-9]\b/.test(self.navigator.userAgent.toLowerCase())
+const createSingleTag = isBrowser && /msie [6-9]\b/.test(window.self.navigator.userAgent.toLowerCase())
 
 module.exports = {
   inject(css,id) {
+    // no-op when not running in browser
+    if (!isBrowser) return
 
     // check if css is already injected
     if (document.getElementById(id)) {
